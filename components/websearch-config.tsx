@@ -36,7 +36,8 @@ export default function WebSearchSettings() {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
+      {/* Location fields commented out - not needed for NWSL data platform */}
+      {/* <div className="flex items-center justify-between">
         <div className="text-zinc-600 text-sm">User&apos;s location</div>
         <div
           className="text-zinc-400 text-sm px-1 transition-colors hover:text-zinc-600 cursor-pointer"
@@ -83,7 +84,8 @@ export default function WebSearchSettings() {
             onChange={(e) => handleLocationChange("city", e.target.value)}
           />
         </div>
-      </div>
+      </div> */}
+      <div className="text-zinc-600 text-sm">Web search enabled with default settings</div>
     </div>
   );
 }

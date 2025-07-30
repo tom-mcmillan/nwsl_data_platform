@@ -64,8 +64,8 @@ const useToolsStore = create<StoreState>()(
         },
       },
       mcpConfig: {
-        server_label: "",
-        server_url: "",
+        server_label: "nwsl-data-server",
+        server_url: "https://nwsl-mcp-server-78453984015.us-central1.run.app/mcp",
         allowed_tools: "",
         skip_approval: true,
       },
@@ -83,7 +83,7 @@ const useToolsStore = create<StoreState>()(
       setFunctionsEnabled: (enabled) => {
         set({ functionsEnabled: enabled });
       },
-      mcpEnabled: false,
+      mcpEnabled: true,
       setMcpEnabled: (enabled) => {
         set({ mcpEnabled: enabled });
       },
