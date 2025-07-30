@@ -30,8 +30,6 @@ steps:
       - '--allow-unauthenticated'
       - '--port'
       - '3000'
-      - '--update-secrets'
-      - 'OPENAI_API_KEY=openai-api-key:latest'
 
 # Store images in Google Container Registry
 images:
