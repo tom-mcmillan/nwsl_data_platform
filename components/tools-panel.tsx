@@ -2,7 +2,6 @@
 import React from "react";
 import FileSearchSetup from "./file-search-setup";
 import WebSearchConfig from "./websearch-config";
-import FunctionsView from "./functions-view";
 import McpConfig from "./mcp-config";
 import PanelConfig from "./panel-config";
 import useToolsStore from "@/stores/useToolsStore";
@@ -13,8 +12,6 @@ export default function ContextPanel() {
     setFileSearchEnabled,
     webSearchEnabled,
     setWebSearchEnabled,
-    functionsEnabled,
-    setFunctionsEnabled,
     mcpEnabled,
     setMcpEnabled,
     codeInterpreterEnabled,
