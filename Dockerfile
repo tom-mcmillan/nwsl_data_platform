@@ -7,14 +7,17 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install dependencies (including devDependencies for build)
+RUN npm ci
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the Next.js application
 RUN npm run build
+
+# Remove devDependencies after build
+RUN npm prune --production
 
 # Expose the port the app runs on
 EXPOSE 3000
