@@ -13,6 +13,10 @@ RUN npm ci
 # Copy the rest of the application code
 COPY . .
 
+# Accept build argument for OpenAI API key
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+
 # Build the Next.js application
 RUN npm run build
 
