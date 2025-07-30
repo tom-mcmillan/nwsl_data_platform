@@ -30,9 +30,9 @@ steps:
 images:
   - 'gcr.io/$PROJECT_ID/nwsl-frontend:$COMMIT_SHA'
 
-# Define substitutions for environment variables
-substitutions:
-  _OPENAI_API_KEY: ''
+# Use cloud logging only to avoid logs bucket requirement
+options:
+  logging: CLOUD_LOGGING_ONLY
 
 # Configure the build to access secret environment variables
 availableSecrets:
