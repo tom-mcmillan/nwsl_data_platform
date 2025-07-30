@@ -1,4 +1,4 @@
-# Responses starter app
+# NWSL Data Platform
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![NextJS](https://img.shields.io/badge/Built_with-NextJS-blue)
