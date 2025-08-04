@@ -30,6 +30,9 @@ steps:
       - '--allow-unauthenticated'
       - '--port'
       - '3000'
+      - '--set-env-vars'
+      - 'OPENAI_API_KEY=$$OPENAI_API_KEY'
+    secretEnv: ['OPENAI_API_KEY']
 
 # Store images in Google Container Registry
 images:
