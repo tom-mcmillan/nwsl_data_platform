@@ -15,6 +15,6 @@ Let chat NWSL... what's on your mind?
 `;
 
 export const defaultVectorStore = {
-  id: "",
-  name: "Example",
+  id: "vs_6891378219708191aa929bf96a6f1880",
+  name: "NWSL Data",
 };
