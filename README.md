@@ -1,62 +1,75 @@
-# NWSL Data Platform
+# NWSL Advanced Analytics Intelligence Platform
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![NextJS](https://img.shields.io/badge/Built_with-NextJS-blue)
 ![OpenAI API](https://img.shields.io/badge/Powered_by-OpenAI_API-orange)
+![MkDocs Material](https://img.shields.io/badge/Docs-MkDocs_Material-blue)
 
-This repository contains the NWSL Data Platform frontend built on top of the [Responses API](https://platform.openai.com/docs/api-reference/responses).
-It leverages built-in tools ([web search](https://platform.openai.com/docs/guides/tools-web-search?api-mode=responses) and [file search](https://platform.openai.com/docs/guides/tools-file-search)) and implements a chat interface with multi-turn conversation handling, connected to an NWSL MCP server.
+Professional documentation and web platform for the NWSL Advanced Analytics Intelligence system. This repository handles documentation rendering and web interface for sophisticated soccer analytics powered by sabermetrics-inspired composite metrics.
 
-Features:
+## Architecture
 
-- Multi-turn conversation handling
-- Web search tool configuration
-- Vector store creation & file upload for use with the file search tool
-- Function calling
-- Streaming responses & tool calls
-- Display annotations
+- **Documentation**: Professional MkDocs Material rendering with OpenAI-inspired theme
+- **Web Interface**: NextJS chat interface connected to NWSL MCP server
+- **Analytics Integration**: Model Context Protocol (MCP) integration for advanced analytics
+- **Single Source of Truth**: Documentation synced from `nwsl_data` project
 
-This app is meant to be used as a starting point to build a conversational assistant that you can customize to your needs.
+## Features
 
-## How to use
+- **Professional Documentation**: Enhanced MkDocs Material with custom OpenAI-inspired theme
+- **NIR Composite Metrics**: Sophisticated performance analysis beyond traditional statistics  
+- **MCP Server Integration**: 15+ analytics tools accessible via Model Context Protocol
+- **AI Visualization**: Context-aware chart generation and intelligent data visualization
+- **Comprehensive Coverage**: 13 seasons of NWSL data with 99.38% completeness
 
-1. **Set up the OpenAI API:**
+## Documentation System
 
-   - If you're new to the OpenAI API, [sign up for an account](https://platform.openai.com/signup).
-   - Follow the [Quickstart](https://platform.openai.com/docs/quickstart) to retrieve your API key.
+### Development Workflow
 
-2. **Set the OpenAI API key:**
+1. **Documentation Source**: All content authored in `../nwsl_data/docs/` (single source of truth)
+2. **Professional Rendering**: Enhanced MkDocs Material with OpenAI-inspired theme
+3. **Sync Process**: `npm run docs:sync` copies content and builds documentation
 
-   2 options:
+### Documentation Commands
 
-   - Set the `OPENAI_API_KEY` environment variable [globally in your system](https://platform.openai.com/docs/libraries#create-and-export-an-api-key)
-   - Set the `OPENAI_API_KEY` environment variable in the project: Create a `.env` file at the root of the project and add the following line (see `.env.example` for reference):
+```bash
+# Install documentation dependencies
+npm run docs:install
 
+# Sync documentation from nwsl_data and build
+npm run docs:sync
+
+# Development server (after sync)
+npm run docs:dev
+
+# Build documentation only
+npm run docs:build
+```
+
+### Web Interface Setup
+
+1. **Set OpenAI API key:**
    ```bash
+   # Create .env file
    OPENAI_API_KEY=<your_api_key>
    ```
 
-3. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/openai/openai-responses-starter-app.git
-   ```
-
-4. **Install dependencies:**
-
-   Run in the project root:
-
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-5. **Run the app:**
-
+3. **Run development server:**
    ```bash
    npm run dev
    ```
+   Available at [`http://localhost:3000`](http://localhost:3000)
 
-   The app will be available at [`http://localhost:3000`](http://localhost:3000).
+4. **Access documentation:**
+   ```bash
+   npm run docs:dev
+   ```
+   Available at [`http://localhost:8000`](http://localhost:8000)
 
 ## Contributing
 
