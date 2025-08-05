@@ -14,10 +14,10 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Responses starter app",
-  description: "Starter app for the OpenAI Responses API",
+  title: "NWSL Data",
+  description: "NWSL Advanced Analytics Intelligence platform",
   icons: {
-    icon: "/openai_logo.svg",
+    icon: "/icon-n.svg",
   },
 };
 

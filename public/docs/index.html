@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -67,17 +67,168 @@
     
     
     
+<style>
+/* OpenAI-style clean theme overrides */
+
+/* Header - black background like OpenAI */
+.md-header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.md-header__title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Navigation - clean white sidebar */
+.md-sidebar {
+  background-color: #ffffff !important;
+}
+
+.md-nav {
+  color: #000000 !important;
+}
+
+.md-nav__title {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.md-nav__link {
+  color: #374151 !important;
+}
+
+.md-nav__link:hover {
+  color: #000000 !important;
+}
+
+.md-nav__link--active {
+  color: #000000 !important;
+  font-weight: 500 !important;
+}
+
+/* Content area - clean white background */
+.md-content {
+  background-color: #ffffff !important;
+}
+
+.md-main {
+  background-color: #ffffff !important;
+}
+
+/* Typography - clean and minimal */
+.md-typeset h1 {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-bottom: none !important;
+}
+
+.md-typeset h2 {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+}
+
+.md-typeset h3 {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.md-typeset p {
+  color: #374151 !important;
+}
+
+/* Remove colorful admonitions - make them subtle */
+.md-typeset .admonition {
+  border-left: 4px solid #e5e7eb !important;
+  background-color: #f9fafb !important;
+}
+
+.md-typeset .admonition-title {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+
+/* Code blocks - clean styling */
+.md-typeset code {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+.md-typeset pre {
+  background-color: #f8fafc !important;
+}
+
+/* Tables - clean minimal styling */
+.md-typeset table {
+  border: 1px solid #e5e7eb !important;
+}
+
+.md-typeset th {
+  background-color: #f8fafc !important;
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+
+.md-typeset td {
+  border-color: #e5e7eb !important;
+}
+
+/* Links - subtle blue like OpenAI */
+.md-typeset a {
+  color: #2563eb !important;
+}
+
+.md-typeset a:hover {
+  color: #1d4ed8 !important;
+}
+
+/* Remove bright colors from buttons and UI elements */
+.md-search__input {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+.md-search__input::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Table of contents - clean styling */
+.md-nav--secondary .md-nav__link {
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: #000000 !important;
+  font-weight: 500 !important;
+}
+
+/* Remove any remaining colorful elements */
+.md-tabs {
+  background-color: #000000 !important;
+}
+
+.md-tabs__link {
+  color: #ffffff !important;
+}
+
+.md-tabs__link--active {
+  color: #ffffff !important;
+}
+</style>
+
   </head>
   
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -98,7 +249,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="NWSL Advanced Analytics Documentation" class="md-header__button md-logo" aria-label="NWSL Advanced Analytics Documentation" data-md-component="logo">
       
@@ -128,33 +281,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -176,11 +303,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
-          </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
@@ -225,76 +347,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="about/mission/" class="md-tabs__link">
-          
-  
-  
-  About
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="data/coverage/" class="md-tabs__link">
-          
-  
-  
-  Data Foundation
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -308,10 +360,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="." title="NWSL Advanced Analytics Documentation" class="md-nav__button md-logo" aria-label="NWSL Advanced Analytics Documentation" data-md-component="logo">
       
@@ -414,7 +464,7 @@
           <li class="md-nav__item">
   <a href="#our-mission" class="md-nav__link">
     <span class="md-ellipsis">
-      🏆 Our Mission
+      Our Mission
     </span>
   </a>
   
@@ -423,7 +473,7 @@
           <li class="md-nav__item">
   <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why This Matters
+      Why This Matters
     </span>
   </a>
   
@@ -447,7 +497,7 @@
           <li class="md-nav__item">
   <a href="#sabermetrics-for-soccer" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 Sabermetrics for Soccer
+      Sabermetrics for Soccer
     </span>
   </a>
   
@@ -456,7 +506,7 @@
           <li class="md-nav__item">
   <a href="#unmatched-data-foundation" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Unmatched Data Foundation
+      Unmatched Data Foundation
     </span>
   </a>
   
@@ -480,7 +530,7 @@
           <li class="md-nav__item">
   <a href="#advanced-team-intelligence" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Advanced Team Intelligence
+      Advanced Team Intelligence
     </span>
   </a>
   
@@ -489,7 +539,7 @@
           <li class="md-nav__item">
   <a href="#sophisticated-player-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚽ Sophisticated Player Analysis
+      Sophisticated Player Analysis
     </span>
   </a>
   
@@ -498,7 +548,7 @@
           <li class="md-nav__item">
   <a href="#league-wide-insights" class="md-nav__link">
     <span class="md-ellipsis">
-      📈 League-Wide Insights
+      League-Wide Insights
     </span>
   </a>
   
@@ -546,21 +596,19 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -667,21 +715,19 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -825,7 +871,7 @@
           <li class="md-nav__item">
   <a href="#our-mission" class="md-nav__link">
     <span class="md-ellipsis">
-      🏆 Our Mission
+      Our Mission
     </span>
   </a>
   
@@ -834,7 +880,7 @@
           <li class="md-nav__item">
   <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why This Matters
+      Why This Matters
     </span>
   </a>
   
@@ -858,7 +904,7 @@
           <li class="md-nav__item">
   <a href="#sabermetrics-for-soccer" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 Sabermetrics for Soccer
+      Sabermetrics for Soccer
     </span>
   </a>
   
@@ -867,7 +913,7 @@
           <li class="md-nav__item">
   <a href="#unmatched-data-foundation" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Unmatched Data Foundation
+      Unmatched Data Foundation
     </span>
   </a>
   
@@ -891,7 +937,7 @@
           <li class="md-nav__item">
   <a href="#advanced-team-intelligence" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Advanced Team Intelligence
+      Advanced Team Intelligence
     </span>
   </a>
   
@@ -900,7 +946,7 @@
           <li class="md-nav__item">
   <a href="#sophisticated-player-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚽ Sophisticated Player Analysis
+      Sophisticated Player Analysis
     </span>
   </a>
   
@@ -909,7 +955,7 @@
           <li class="md-nav__item">
   <a href="#league-wide-insights" class="md-nav__link">
     <span class="md-ellipsis">
-      📈 League-Wide Insights
+      League-Wide Insights
     </span>
   </a>
   
@@ -960,15 +1006,12 @@
 <h1 id="nwsl-advanced-analytics-intelligence">NWSL Advanced Analytics Intelligence<a class="headerlink" href="#nwsl-advanced-analytics-intelligence" title="Permanent link">&para;</a></h1>
 <h2 id="transforming-womens-soccer-analysis-through-data-science">Transforming Women's Soccer Analysis Through Data Science<a class="headerlink" href="#transforming-womens-soccer-analysis-through-data-science" title="Permanent link">&para;</a></h2>
 <p>Welcome to the comprehensive documentation for the NWSL Advanced Analytics Intelligence platform - a sophisticated system that brings sabermetrics-inspired analysis to women's professional soccer.</p>
-<div class="admonition info">
-<p class="admonition-title">Platform Status</p>
-<p><strong>13 complete seasons</strong> • <strong>99.38% data coverage</strong> • <strong>1,563 matches analyzed</strong> • <strong>42,572 player records</strong></p>
-</div>
+<p><strong>Platform Status:</strong> 13 complete seasons • 99.38% data coverage • 1,563 matches analyzed • 42,572 player records</p>
 <h2 id="what-were-building">What We're Building<a class="headerlink" href="#what-were-building" title="Permanent link">&para;</a></h2>
 <p>The National Women's Soccer League deserves the same analytical sophistication that transformed baseball, basketball, and men's soccer. We're building the most comprehensive NWSL analytics platform ever created, moving far beyond basic statistics to provide meaningful insights that matter.</p>
-<h3 id="our-mission">🏆 <strong>Our Mission</strong><a class="headerlink" href="#our-mission" title="Permanent link">&para;</a></h3>
+<h3 id="our-mission">Our Mission<a class="headerlink" href="#our-mission" title="Permanent link">&para;</a></h3>
 <p>To revolutionize how we understand and analyze women's professional soccer by applying advanced statistical methodologies that reveal the true story behind the game.</p>
-<h3 id="why-this-matters">🧠 <strong>Why This Matters</strong><a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
+<h3 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
 <p>Traditional soccer statistics tell an incomplete story. Goals and assists are important, but they miss the nuanced contributions that truly impact team success. Our platform introduces:</p>
 <ul>
 <li><strong>Composite Performance Metrics</strong>: Like baseball's move from batting average to OPS, we combine multiple performance dimensions</li>
@@ -977,7 +1020,7 @@
 <li><strong>Tactical Intelligence</strong>: Automated identification of playing styles and tactical patterns</li>
 </ul>
 <h2 id="what-makes-us-different">What Makes Us Different<a class="headerlink" href="#what-makes-us-different" title="Permanent link">&para;</a></h2>
-<h3 id="sabermetrics-for-soccer">📊 <strong>Sabermetrics for Soccer</strong><a class="headerlink" href="#sabermetrics-for-soccer" title="Permanent link">&para;</a></h3>
+<h3 id="sabermetrics-for-soccer">Sabermetrics for Soccer<a class="headerlink" href="#sabermetrics-for-soccer" title="Permanent link">&para;</a></h3>
 <p>We've adapted proven statistical methodologies from baseball's analytical revolution:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Traditional Approach</label><label for="__tabbed_1_2">Our Advanced Approach</label></div>
 <div class="tabbed-content">
@@ -999,7 +1042,7 @@
 </div>
 </div>
 </div>
-<h3 id="unmatched-data-foundation">🎯 <strong>Unmatched Data Foundation</strong><a class="headerlink" href="#unmatched-data-foundation" title="Permanent link">&para;</a></h3>
+<h3 id="unmatched-data-foundation">Unmatched Data Foundation<a class="headerlink" href="#unmatched-data-foundation" title="Permanent link">&para;</a></h3>
 <p>Our analysis is built on the most comprehensive NWSL database ever assembled:</p>
 <table>
 <thead>
@@ -1032,21 +1075,21 @@
 </tbody>
 </table>
 <h2 id="platform-capabilities">Platform Capabilities<a class="headerlink" href="#platform-capabilities" title="Permanent link">&para;</a></h2>
-<h3 id="advanced-team-intelligence">🔍 <strong>Advanced Team Intelligence</strong><a class="headerlink" href="#advanced-team-intelligence" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-team-intelligence">Advanced Team Intelligence<a class="headerlink" href="#advanced-team-intelligence" title="Permanent link">&para;</a></h3>
 <ul>
 <li>NIR-based team performance analysis</li>
 <li>Tactical style identification and evolution</li>
 <li>Context-adjusted seasonal comparisons</li>
 <li>Predictive matchup analysis</li>
 </ul>
-<h3 id="sophisticated-player-analysis">⚽ <strong>Sophisticated Player Analysis</strong><a class="headerlink" href="#sophisticated-player-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="sophisticated-player-analysis">Sophisticated Player Analysis<a class="headerlink" href="#sophisticated-player-analysis" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Individual NWSL Impact Ratings</li>
 <li>Role optimization recommendations  </li>
 <li>Performance trajectory analysis</li>
 <li>Market value indicators</li>
 </ul>
-<h3 id="league-wide-insights">📈 <strong>League-Wide Insights</strong><a class="headerlink" href="#league-wide-insights" title="Permanent link">&para;</a></h3>
+<h3 id="league-wide-insights">League-Wide Insights<a class="headerlink" href="#league-wide-insights" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Historical trend analysis</li>
 <li>Performance leader identification (beyond just goal scorers)</li>
@@ -1063,10 +1106,7 @@
 </ol>
 <h2 id="transparency-trust">Transparency &amp; Trust<a class="headerlink" href="#transparency-trust" title="Permanent link">&para;</a></h2>
 <p>We believe in complete transparency about our methods, limitations, and assumptions. Every aspect of our analytical approach is documented, from data collection procedures to statistical methodologies.</p>
-<div class="admonition note">
-<p class="admonition-title">Open Development</p>
-<p>Our platform development is open source and our methodologies are fully documented. We believe the NWSL community deserves to understand exactly how our analysis works.</p>
-</div>
+<p><strong>Open Development:</strong> Our platform development is open source and our methodologies are fully documented. We believe the NWSL community deserves to understand exactly how our analysis works.</p>
 <hr />
 <p><em>Built with advanced statistical methodologies inspired by Jim Albert's sabermetrics research and powered by 13 years of comprehensive NWSL data.</em></p>
 
@@ -1140,7 +1180,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
