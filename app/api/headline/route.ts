@@ -156,6 +156,12 @@ export async function GET() {
         headline: headlineCache.headline,
         generated_at: headlineCache.generated_at,
         cached: true
+      }, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
       });
     }
 
@@ -177,6 +183,12 @@ export async function GET() {
       headline,
       generated_at,
       cached: false
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
     });
 
   } catch (error) {
@@ -188,6 +200,12 @@ export async function GET() {
       headline: fallback,
       generated_at: new Date().toISOString(),
       error: "Failed to generate dynamic headline, using fallback"
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
     });
   }
 }
