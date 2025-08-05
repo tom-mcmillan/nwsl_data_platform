@@ -1,0 +1,232 @@
+# NWSL Advanced Analytics Intelligence Documentation
+# Professional MkDocs Material Configuration
+
+# Project Information  
+site_name: NWSL Advanced Analytics Intelligence
+site_url: https://platform.nwsldata.com/docs/
+site_author: NWSL Analytics Team
+site_description: >
+  Comprehensive documentation for the NWSL Advanced Analytics Intelligence 
+  platform - sophisticated sabermetrics-inspired analysis for women's professional soccer.
+
+# Repository
+repo_name: tom-mcmillan/nwsl_data_platform
+repo_url: https://github.com/tom-mcmillan/nwsl_data_platform
+edit_uri: edit/main/docs/
+
+# Build Directory Configuration
+site_dir: public/docs
+docs_dir: docs
+
+# Theme Configuration - OpenAI Inspired Professional Design
+theme:
+  name: material
+  language: en
+  
+  # Color Palette - Clean professional theme
+  palette:
+    - scheme: default
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  # Professional Typography
+  font:
+    text: Inter
+    code: JetBrains Mono
+  
+  # Logo and Branding
+  logo: assets/images/favicon.png
+  favicon: assets/images/favicon.png
+  
+  # Advanced Features
+  features:
+    # Navigation
+    - navigation.instant        # SPA-like navigation
+    - navigation.instant.prefetch  # Prefetch on hover
+    - navigation.instant.progress  # Progress indicator
+    - navigation.tracking       # Update URL with anchor
+    - navigation.tabs           # Top-level tabs
+    - navigation.tabs.sticky    # Sticky tabs
+    - navigation.indexes        # Section index pages
+    - navigation.top            # Back to top button
+    - navigation.footer         # Prev/next navigation
+    
+    # Search Enhancement
+    - search.suggest            # Search suggestions
+    - search.highlight          # Highlight search terms
+    - search.share             # Share search results
+    
+    # Header Behavior
+    - header.autohide          # Auto-hide on scroll
+    
+    # Content Features
+    - content.code.copy        # Copy code blocks
+    - content.code.annotate    # Code annotations
+    - content.tabs.link        # Link content tabs
+    - content.tooltips         # Enhanced tooltips
+    
+    # Table of Contents
+    - toc.follow               # Follow anchor links
+    - toc.integrate           # Integrate with navigation
+
+# Advanced Markdown Extensions
+markdown_extensions:
+  # Standard Extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: Permanent link
+      
+  # PyMdown Extensions for Advanced Formatting
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Professional Plugin Configuration
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang: en
+      min_search_length: 2
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+      htmlmin_opts:
+        remove_comments: true
+        remove_empty_space: true
+        reduce_boolean_attributes: true
+
+# Custom CSS for OpenAI-inspired Theme
+extra_css:
+  - stylesheets/nwsl-analytics-theme.css
+
+# Additional Configuration
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            <a href="..." target="_blank" rel="noopener">telling us what you found confusing</a>.
+  
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tom-mcmillan/nwsl_data_platform
+      name: NWSL Analytics on GitHub
+
+# Navigation Structure - Comprehensive Platform Documentation
+nav:
+  - Home: index.md
+  
+  - About:
+    - about/index.md
+    - Mission & Vision: about/mission.md
+    - Methodology: about/methodology.md
+    - Why Advanced Analytics: about/why-advanced-analytics.md
+  
+  - Data Foundation:
+    - data/index.md
+    - Coverage & Quality: data/coverage.md
+    - Data Sources: data/sources.md
+    - Database Overview: data/database-overview.md
+    - Schema Documentation: schema.md
+  
+  - Analytics Platform:
+    - platform/index.md
+    - NIR Composite Metrics: platform/nir-metrics.md
+    - Player Analysis: platform/player-analysis.md
+    - Team Intelligence: platform/team-intelligence.md
+    - Tactical Profiling: platform/tactical-profiling.md
+    - Predictive Models: platform/predictive-models.md
+  
+  - MCP Server:
+    - mcp/index.md
+    - Architecture: mcp/architecture.md
+    - Tools & Capabilities: mcp/tools.md  
+    - Usage Guide: mcp_server_usage.md
+    - Building MCP Servers: "mcp docs/building_an_mpc_server.md"
+    - Responses API Guide: "mcp docs/guide_to_using_the_responses_apis_mcp_tool.md"
+    - Remote MCP: "mcp docs/remote_mcp.md"
+  
+  - AI Visualization Agents:
+    - visualization/index.md
+    - Chart Generation: visualization/chart-generation.md
+    - Context-Aware Plotting: visualization/context-aware.md
+    - Interactive Dashboards: visualization/dashboards.md
+  
+  - API Reference:
+    - api/index.md
+    - Authentication: api/authentication.md
+    - Endpoints: api/endpoints.md
+    - Rate Limiting: api/rate-limiting.md
+    - Error Handling: api/error-handling.md
+  
+  - Technical Implementation:
+    - System Design: system_design.md
+    - System Prompt: system_prompt.md
+    - Database Changes: database_changes.md
+    - Team Seasons: teams_seasons.md
+    - Data Scraping: scraping.md
+    - Test Queries: test_queries.md
+  
+  - Deployment & Operations:
+    - deployment/index.md
+    - Cloud Infrastructure: deployment/cloud.md
+    - Monitoring: deployment/monitoring.md
+    - Performance: deployment/performance.md
+    - Scaling: deployment/scaling.md
+
+# Copyright
+copyright: >
+  Copyright &copy; 2024 NWSL Advanced Analytics Intelligence - 
+  <a href="#__consent">Change cookie settings</a>

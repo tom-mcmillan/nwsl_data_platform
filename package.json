@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docs:install": "pip install -r requirements.txt",
+    "docs:dev": "mkdocs serve",
+    "docs:build": "mkdocs build",
+    "docs:deploy": "mkdocs build && echo 'Documentation built to public/docs/'",
+    "build:all": "npm run docs:build && npm run build"
   },
   "dependencies": {
     "@npmcli/fs": "^4.0.0",
