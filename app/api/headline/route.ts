@@ -11,43 +11,33 @@ interface CachedHeadline {
 
 let headlineCache: CachedHeadline | null = null;
 
-// Fallback headlines for when API is unavailable
+// Fallback headlines for when API is unavailable (following "How" format)
 const FALLBACK_HEADLINES = [
-  "What's happening in the NWSL right now?",
-  "Curious about this season's biggest stories?",
-  "Ready to dive into NWSL analytics?",
-  "What do you want to know about the league?",
-  "Exploring the latest NWSL developments?",
-  "What's driving this season's narratives?",
+  "How do teams adapt mid-season?",
+  "How does home field affect outcomes?",
+  "How do rookie signings impact teams?",
+  "How do injury patterns shape seasons?",
+  "How does tactical evolution unfold?",
+  "How do playoff races develop?",
 ];
 
 // Dedicated system prompt for headline generation
 const HEADLINE_SYSTEM_PROMPT = `# NWSL Headline Generator
 
-You are a specialized headline generator for the NWSL Data platform. Your job is to create a SINGLE engaging, conversational question that makes people curious about current NWSL happenings.
-
-## Your Task
-Generate ONE headline question (5-12 words) based on the most current and interesting NWSL data you can access. The headline should:
-
-- Be phrased as a question that makes people curious
-- Reference current league trends, teams, or storylines
-- Feel natural and conversational  
-- Make someone want to learn more about the NWSL
-- Be based on REAL current data from your NWSL database
-
-## Examples of Great Headlines:
-- "Can anyone catch Kansas City this season?"
-- "What's behind San Diego's recent hot streak?"
-- "Who's emerging as this year's MVP frontrunner?"
-- "Ready for the playoff race to heat up?"
-- "What's driving Portland's incredible turnaround?"
-
+You are a specialized headline generator for the NWSL Data platform. You're the comprehensive intelligence platform that transforms raw NWSL data into compelling insights, accessible to everyone from casual fans to professional analysts. Your job is to create a SINGLE question that kicks off a conversation with our NWSL Data Agent. Think like Bill James, founder of Sabermetrics, and speak in a matter of fact, concise, and plainspoken way, avoiding jargon.
+ 
 ## Instructions:
-1. Use your NWSL database tools to check current standings, recent results, and trends
-2. Generate ONE engaging question headline based on what you find
-3. Return ONLY the headline question, nothing else
 
-Focus on what's most compelling in the league RIGHT NOW.`;
+1. Use the MPC server available to you and identify the most interesting storyline from the most current data (eg what's happening in the NWSL right now). Focus on:
+
+- Current league standings and which teams are performing surprisingly well or poorly
+- Recent match results that were significant upsets or had important implications
+- Player performance trends and standout performers
+- Upcoming matches or playoff implications
+- Any notable streaks, records, or milestones
+
+2. Return a question that:
+- Is open-ended question (5-10 words), and begins with the word "How" and has a specific object.`;
 
 async function generateHeadlineWithMCP(): Promise<string> {
   try {
@@ -105,12 +95,12 @@ Based on what you find in the current data, what is the single most compelling s
         // Now generate a headline based on this current storyline
         const headlinePrompt = `Based on this current NWSL storyline: "${storyline}"
 
-Generate ONE engaging headline question (5-12 words) that would make someone curious to learn more. The headline should be conversational and question-based.
+Generate ONE engaging headline question (5-10 words) that begins with "How" and has a specific object. Think like Bill James - matter of fact, concise, and plainspoken, avoiding jargon.
 
 Examples:
-- "Can anyone catch Kansas City this season?"
-- "What's behind San Diego's recent hot streak?"
-- "Who's emerging as this year's MVP frontrunner?"
+- "How do Portland's tactics create chances?"
+- "How does Kansas City maintain consistency?"
+- "How do rookie defenders adapt quickly?"
 
 Return ONLY the headline question, no quotes or additional text:`;
 
