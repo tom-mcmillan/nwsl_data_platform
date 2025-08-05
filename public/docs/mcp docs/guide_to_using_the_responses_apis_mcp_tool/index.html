@@ -1,0 +1,1044 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the NWSL Advanced Analytics Intelligence platform">
+      
+      
+        <meta name="author" content="NWSL Analytics Team">
+      
+      
+        <link rel="canonical" href="https://platform.nwsldata.com/docs/mcp%20docs/guide_to_using_the_responses_apis_mcp_tool/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Guide to Using the Responses API's MCP Tool - NWSL Advanced Analytics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guide-to-using-the-responses-apis-mcp-tool" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NWSL Advanced Analytics Documentation" class="md-header__button md-logo" aria-label="NWSL Advanced Analytics Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NWSL Advanced Analytics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guide to Using the Responses API's MCP Tool
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tom-mcmillan/nwsl_data" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nwsl_data
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/mission/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data/coverage/" class="md-tabs__link">
+          
+  
+  
+  Data Foundation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NWSL Advanced Analytics Documentation" class="md-nav__button md-logo" aria-label="NWSL Advanced Analytics Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NWSL Advanced Analytics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tom-mcmillan/nwsl_data" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nwsl_data
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/mission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mission & Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methodology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/why-advanced-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Advanced Analytics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Foundation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Foundation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coverage & Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/database-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#may-21-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      May 21, 2025
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-simplified-by-the-mcp-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use cases simplified by the MCP tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-tool-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the tool works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-when-building-with-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices when building with MCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best practices when building with MCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter-tools-to-avoid-ballooning-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter tools to avoid ballooning payloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-latency-and-tokens-via-caching-and-reserve-reasoning-models-for-high-complexity-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reduce latency and tokens via caching and reserve reasoning models for high-complexity tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-mcp-with-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using MCP with other tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompting-guidelines-to-improve-mcp-tool-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompting guidelines to improve MCP tool calls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="guide-to-using-the-responses-apis-mcp-tool">Guide to Using the Responses API's MCP Tool<a class="headerlink" href="#guide-to-using-the-responses-apis-mcp-tool" title="Permanent link">&para;</a></h1>
+<h3 id="may-21-2025">May 21, 2025<a class="headerlink" href="#may-21-2025" title="Permanent link">&para;</a></h3>
+<p>Building agentic applications often requires connecting to external services. Traditionally, this is done through function calling where every action makes a round-trip from the model to your backend, then to an external service, waits for a response, and finally returns the result to the model. This process introduces multiple network hops and significant latency, making it cumbersome to scale and manage.</p>
+<p>The hosted Model Context Protocol (MCP) tool in the Responses API makes this easier. Instead of manually wiring each function call to specific services, you can configure your model once to point to an MCP server (or several!). That server acts as a centralized tool host, exposing standard commands like “search product catalog” or “add item to cart.” This allows for simpler orchestration and centralized management of tools.</p>
+<p>With MCP, the model interacts directly with the MCP server, reducing latency and eliminating backend coordination.</p>
+<h2 id="use-cases-simplified-by-the-mcp-tool">Use cases simplified by the MCP tool<a class="headerlink" href="#use-cases-simplified-by-the-mcp-tool" title="Permanent link">&para;</a></h2>
+<p>MCP significantly reduces the friction of building products that interact with external services, allowing you to tie different services together seamlessly. Here’s a sampler of use cases that once involved friction but are now much simpler since the model can communicate directly with remote MCP servers.</p>
+<p>Domain  Use case unlocked by MCP tool   Previous friction
+Commerce / payments Add an item to a Shopify cart and hand back a checkout URL in one turn —
+"Add the Allbirds Men’s Tree Dasher 2 in size 10" → cart link   Generating a Stripe payment link required writing a custom cart_add or create_payment_link wrapper and hosting your own relay server.
+Dev-ops &amp; code quality  Ask Sentry for the latest error in a particular file, then open a GitHub issue with a suggested fix, all in the same conversation   Chaining two different third-party APIs inside one assistive loop involved webhook glue and state juggling.
+Messaging / notifications   Grab the morning’s top soccer headlines via web-search and have Twilio text the summary to a phone number in a single call  Required stitching two tool calls in your backend and batching the final SMS payload yourself.</p>
+<h2 id="how-the-tool-works">How the tool works<a class="headerlink" href="#how-the-tool-works" title="Permanent link">&para;</a></h2>
+<p>At a high level, here is how the MCP tool works:</p>
+<ol>
+<li>
+<p>Declare the server.
+When you add an MCP block to the tools array, the Responses API runtime first detects which transport the server speaks, either the newer “streamable HTTP” or the older HTTP-over-SSE variant, and uses that protocol for traffic.</p>
+</li>
+<li>
+<p>Import the tool list.
+The runtime calls the server’s tools/list, passing any headers you provide (API key, OAuth token, etc.). It then writes the result to an mcp_list_tools item in the model’s context. While this item is present, the list won’t be fetched again. You can limit what the model sees using allowed_tools.</p>
+</li>
+</ol>
+<p>OpenAI discards header values and all but the schema, domain, and subdomains of the MCP server_url after each request. Authorization keys and the server URL must be included with every API call. These values won’t appear in response objects. Schemas use “strict” mode when possible; otherwise they’re loaded as-is.</p>
+<ol>
+<li>Call and approve tools.
+Once the model knows the available actions, it can invoke one. Each invocation produces an mcp_tool_call item and by default the stream pauses for your explicit approval, but you can disable this once you trust the server. After approval, the runtime executes the call, streams back the result, and the model decides whether to chain another tool or return a final answer.</li>
+</ol>
+<h2 id="best-practices-when-building-with-mcp">Best practices when building with MCP<a class="headerlink" href="#best-practices-when-building-with-mcp" title="Permanent link">&para;</a></h2>
+<p>MCP is still in its early stages, so here are best practices that can improve model performance and behavior as you build.</p>
+<h3 id="filter-tools-to-avoid-ballooning-payloads">Filter tools to avoid ballooning payloads<a class="headerlink" href="#filter-tools-to-avoid-ballooning-payloads" title="Permanent link">&para;</a></h3>
+<p>Remote servers often expose numerous tools without considering how models will interpret and use them. By default, this can result in dozens of endpoints being included, each accompanied by verbose definitions like names, descriptions, and JSON schemas that add hundreds of tokens to the model’s context and increase latency. Compounding this, many servers return entire data objects, such as full Stripe invoice records, even when only a few fields are relevant to the model’s task.</p>
+<p>To optimize for performance in production, use the allowed_tools parameter in the Responses API to limit which tools are included from the server’s mcp_list_tools. This reduces token overhead, improves response time, and narrows the model’s decision space. You may also want to exclude certain tools altogether, such as those capable of write actions or those that have financial or security implications.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Copy
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Edit
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>curl<span class="w"> </span>https://api.openai.com/v1/responses<span class="w"> </span>-i<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">    &quot;model&quot;: &quot;gpt-4.1&quot;,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">    &quot;tools&quot;: [</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">      {</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">        &quot;type&quot;: &quot;mcp&quot;,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">        &quot;server_label&quot;: &quot;gitmcp&quot;,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">        &quot;server_url&quot;: &quot;https://gitmcp.io/openai/tiktoken&quot;,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="s1">        &quot;allowed_tools&quot;: [&quot;search_tiktoken_documentation&quot;, &quot;fetch_tiktoken_documentation&quot;],</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="s1">        &quot;require_approval&quot;: &quot;never&quot;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="s1">      }</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="s1">    ],</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="s1">    &quot;input&quot;: &quot;how does tiktoken work?&quot;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="s1">  }&#39;</span>
+</span></code></pre></div>
+<h3 id="reduce-latency-and-tokens-via-caching-and-reserve-reasoning-models-for-high-complexity-tasks">Reduce latency and tokens via caching and reserve reasoning models for high-complexity tasks<a class="headerlink" href="#reduce-latency-and-tokens-via-caching-and-reserve-reasoning-models-for-high-complexity-tasks" title="Permanent link">&para;</a></h3>
+<p>The first time the model connects to a server, a new item of the type mcp_list_tools is created for each MCP server you add. As long as this item is present in the model’s context, we will not call tools/list on the server again. This is akin to caching at the user-conversation level. If mcp_list_tools is not present, we import the list of tools from the MCP server again.</p>
+<p>Passing previous_response_id in subsequent API requests is one way of ensuring that the mcp_list_tools item is present in the model’s context on follow-up turns. Alternatively, you can also pass in the items manually to new responses. The other lever that will affect latency and the number of output tokens is whether you use a reasoning model, as reasoning models will produce far more output tokens, as well as reasoning tokens.</p>
+<p><strong>Scenario 1: non-reasoning model</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Copy
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Edit
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>curl<span class="w"> </span>https://api.openai.com/v1/responses<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s1">    &quot;model&quot;: &quot;gpt-4.1&quot;,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s1">    &quot;tools&quot;: [</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s1">      {</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s1">        &quot;type&quot;: &quot;mcp&quot;,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="s1">        &quot;server_label&quot;: &quot;gitmcp&quot;,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="s1">        &quot;server_url&quot;: &quot;https://gitmcp.io/openai/tiktoken&quot;,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="s1">        &quot;require_approval&quot;: &quot;never&quot;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="s1">      }</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="s1">    ],</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="s1">    &quot;input&quot;: &quot;how does tiktoken work?&quot;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="s1">  }&#39;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>json
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Copy
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>Edit
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="s2">&quot;usage&quot;</span>:<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="s2">&quot;input_tokens&quot;</span>:<span class="w"> </span><span class="m">280</span>,
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="s2">&quot;input_tokens_details&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="s2">&quot;cached_tokens&quot;</span>:<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">}</span>,
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="s2">&quot;output_tokens&quot;</span>:<span class="w"> </span><span class="m">665</span>,
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="s2">&quot;output_tokens_details&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="s2">&quot;reasoning_tokens&quot;</span>:<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">}</span>,
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="s2">&quot;total_tokens&quot;</span>:<span class="w"> </span><span class="m">945</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="o">}</span>
+</span></code></pre></div>
+<p><strong>Scenario 2: reasoning model without previous_response_id</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Copy
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Edit
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>curl<span class="w"> </span>https://api.openai.com/v1/responses<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="s1">    &quot;model&quot;: &quot;o4-mini&quot;,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="s1">    &quot;tools&quot;: [</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="s1">      {</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s1">        &quot;type&quot;: &quot;mcp&quot;,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s1">        &quot;server_label&quot;: &quot;gitmcp&quot;,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s1">        &quot;server_url&quot;: &quot;https://gitmcp.io/openai/tiktoken&quot;,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s1">        &quot;require_approval&quot;: &quot;never&quot;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s1">      }</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s1">    ],</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s1">    &quot;input&quot;: &quot;how does tiktoken work?&quot;,</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s1">    &quot;reasoning&quot;: {</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="s1">      &quot;effort&quot;: &quot;medium&quot;,</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="s1">      &quot;summary&quot;: &quot;auto&quot;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="s1">    }</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="s1">  }&#39;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>json
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>Copy
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Edit
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="s2">&quot;usage&quot;</span>:<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="s2">&quot;input_tokens&quot;</span>:<span class="w"> </span><span class="m">36436</span>,
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span><span class="s2">&quot;input_tokens_details&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="s2">&quot;cached_tokens&quot;</span>:<span class="w"> </span><span class="m">22964</span><span class="w"> </span><span class="o">}</span>,
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">  </span><span class="s2">&quot;output_tokens&quot;</span>:<span class="w"> </span><span class="m">1586</span>,
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">  </span><span class="s2">&quot;output_tokens_details&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="s2">&quot;reasoning_tokens&quot;</span>:<span class="w"> </span><span class="m">576</span><span class="w"> </span><span class="o">}</span>,
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span><span class="s2">&quot;total_tokens&quot;</span>:<span class="w"> </span><span class="m">38022</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="o">}</span>
+</span></code></pre></div>
+<h2 id="using-mcp-with-other-tools">Using MCP with other tools<a class="headerlink" href="#using-mcp-with-other-tools" title="Permanent link">&para;</a></h2>
+<p>The MCP tool is just another entry in the tools array, so the model can use it seamlessly with other hosted tools like code_interpreter, web_search_preview, or image_gen, and with any custom tools you define. You can also use multiple remote MCP servers together.</p>
+<p>In this example, we’ll create an agent that is a pricing analyst for a fictional yoga-attire store: it first pulls current competitor prices for women’s shorts, yoga pants, and tank tops from the Alo Yoga MCP server, then grabs the price for the same three categories from Uniqlo via the hosted web-search tool. Using Code Interpreter it analyzes last week’s sales from a CSV that was pre-loaded with the Files endpoint, in order to calculate per-item revenue and average order value.</p>
+<p>Then it measures each item’s price gap versus the newly fetched Uniqlo and Alo Yoga benchmarks. Any product priced 15 percent or more above or below market is flagged, and the agent delivers a concise text report summarizing the discrepancies and key revenue stats.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Copy</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Edit</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;You are a pricing analyst for my clothing company. Please use the MCP tool </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s2">to fetch prices from the Alo Yoga MCP server for the categories of women&#39;s </span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s2">shorts, yoga pants, and tank tops. Use only the MCP server for Alo Yoga data; don&#39;t search the web.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="s2">Next, use the web search tool to search for Uniqlo prices for women&#39;s shorts, yoga pants, and tank tops.</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="s2">In each case for Alo Yoga and Uniqlo, extract the price for the top result in each category. Also provide the full URLs.</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="s2">Using the uploaded CSV file of sales data from my store, and with the code interpreter tool calculate revenue by product item, compute average order value on a transaction level, and calculate the percentage price gap between the CSV data and Uniqlo/Alo Yoga prices. Flag products priced 15</span><span class="si">% o</span><span class="s2">r more above or below the market. Create and output a short report including the findings.</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="s2"># Steps</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="s2">1. **Fetch Alo Yoga Prices:**</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="s2">   - Use the Alo Yoga MCP server to fetch prices for the following products:</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="s2">     - High-Waist Airlift Legging  </span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="s2">     - Sway Bra Tank  </span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="s2">     - 5&quot; Airlift Energy Short</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="s2">   - Ensure you find prices for each.  </span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="s2">   - Extract the price of the top result for each category.  </span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="s2">   - Include URL links.</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="s2">2. **Query Uniqlo Prices:**</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="s2">   - Use the Web-Search tool to search non-sale prices for the following Uniqlo products:</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="s2">     - Women&#39;s AIRism Soft Biker Shorts  </span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="s2">     - Women&#39;s AIRism Soft Leggings  </span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="s2">     - Women&#39;s AIRism Bra Sleeveless Top</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="s2">   - Ensure you find non-sale prices for each.  </span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="s2">   - Extract the price for the top result for each category.  </span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="s2">   - Include URL links.</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="s2">3. **Sales Data Analysis:**</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="s2">   - Use the uploaded CSV sales data to calculate revenue across each product item.  </span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="s2">   - Determine the average order-value on a transaction level.  </span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="s2">   - For each SKU, compute the percentage price gap between the CSV data and Uniqlo/Alo Yoga prices.  </span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="s2">   - Flag products priced ≥ 15</span><span class="si">% a</span><span class="s2">bove or below the market.</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="s2">4. **Report:**</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="s2">   - Compile and output a report including the flagging results</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="s2">&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<p>Pricing Comparison and Revenue Analysis Report
+Your Store's Sales &amp; Price Analysis</p>
+<p>Revenue by Product:</p>
+<p>Shorts: $6,060</p>
+<p>Tank tops: $6,150</p>
+<p>Yoga pants: $12,210</p>
+<p>Average Order Value: $872.14</p>
+<p>Your Store's Average Selling Price by Category:</p>
+<p>Shorts: $60.00</p>
+<p>Tank tops: $75.00</p>
+<p>Yoga pants: $110.00</p>
+<p>Pricing Gaps vs Market
+Category    Store Avg Price vs Alo Yoga Gap (%) Flagged (≥15%)  vs Uniqlo Gap (%)   Flagged (≥15%)
+Shorts  $60.00 –31.8%   YES +100.7% YES
+Tank tops   $75.00 –14.8%       +114.9% YES
+Yoga pants  $110.00 –14.1%      +267.9% YES</p>
+<p>Recommendations &amp; Flags
+Flagged products (≥ 15% price gap):</p>
+<p>Shorts: Priced 31.8% below Alo Yoga, but 100.7% above Uniqlo.</p>
+<p>Tank tops: Priced over 114.9% above Uniqlo.</p>
+<p>Yoga pants: Priced 267.9% above Uniqlo.</p>
+<p>Shorts are priced significantly below premium competitors (Alo Yoga), but far higher than budget alternatives (Uniqlo). If you want to compete in the premium segment, consider increasing your price. If you want to target budget buyers, a price decrease could be justifiable. Most of your tank tops and yoga pants are similarly positioned—much lower than Alo, but well above Uniqlo.</p>
+<h2 id="prompting-guidelines-to-improve-mcp-tool-calls">Prompting guidelines to improve MCP tool calls<a class="headerlink" href="#prompting-guidelines-to-improve-mcp-tool-calls" title="Permanent link">&para;</a></h2>
+<p>Depending on your use case you might find that the model invokes many MCP calls, for instance when using catalog-search tools. To avoid endless iterations over large product inventories it’s helpful to:</p>
+<ol>
+<li>
+<p>Limit results. Instruct the model to return only N items at a time and offer to continue only when the user explicitly asks for more.</p>
+</li>
+<li>
+<p>Use few-shot examples. If the MCP servers you’re using include exhaustive mcp_list_tools, showing targeted examples helps the model choose the correct server and stop once it has what it needs.</p>
+</li>
+<li>
+<p>Ask follow-ups for missing details. If size, color, product line, etc. are missing from the user query, prompt the model to ask a question first rather than launching a broad search.</p>
+</li>
+</ol>
+<p>Here’s a sample prompt illustrating these guidelines:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Copy</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Edit</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;You are an AI assistant that can call the following MCP servers:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s2">1. allbirds_store  </span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s2">2. gitmcp</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s2">Steps:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="s2">1. Use the MCP servers above to answer the user query; not every MCP server will be relevant for a given query, so choose wisely.  </span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s2">2. If the user’s request lacks essential details (size, color, etc.), ask a follow-up question first.  </span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s2">3. If searching for products in a catalog, only return 4 results at a time before asking the user whether they want to see more.</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="s2">### Few-shot examples</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="s2"># EX1 — Direct product search, then fetch variant details  </span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="s2">user: Do you have the Allbirds Tree Runner in men’s size 10?  </span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="s2">assistant: {&quot;name&quot;:&quot;allbirds_store.search_shop_catalog&quot;,&quot;arguments&quot;:{&quot;query&quot;:&quot;Tree Runner&quot;,&quot;context&quot;:&quot;Men’s size 10 shoes&quot;}}  </span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="s2"># (assume search returns product_id &quot;gid://shopify/Product/987&quot;)  </span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="s2">assistant: {&quot;name&quot;:&quot;allbirds_store.get_product_details&quot;,&quot;arguments&quot;:{&quot;product_id&quot;:&quot;gid://shopify/Product/987&quot;,&quot;options&quot;:{&quot;Size&quot;:&quot;10&quot;}}}</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="s2"># EX2 — Clarify missing size, then two-step color variant lookup  </span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="s2">user: I want the Tree Runner in blue.  </span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="s2">assistant: Sure — what size do you need?  </span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="s2">user: Size 10.  </span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="s2">assistant: {&quot;name&quot;:&quot;allbirds_store.search_shop_catalog&quot;,&quot;arguments&quot;:{&quot;query&quot;:&quot;Tree Runner&quot;,&quot;context&quot;:&quot;Blue variant, size 10&quot;}}  </span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="s2"># (assume search returns product_id &quot;gid://shopify/Product/987&quot;)  </span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="s2">assistant: {&quot;name&quot;:&quot;allbirds_store.get_product_details&quot;,&quot;arguments&quot;:{&quot;product_id&quot;:&quot;gid://shopify/Product/987&quot;,&quot;options&quot;:{&quot;Size&quot;:&quot;10&quot;,&quot;Color&quot;:&quot;Blue&quot;}}}</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="s2"># EX3 — Git docs: search then fetch specific file  </span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="s2">user: Can you show me how tiktoken does byte-pair encoding?  </span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="s2">assistant: {&quot;name&quot;:&quot;gitmcp.search_website_documentation&quot;,&quot;arguments&quot;:{&quot;query&quot;:&quot;tiktoken byte-pair encoding&quot;}}  </span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="s2"># (assume search returns document_id &quot;docs/ENCODING.md&quot;)  </span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="s2">assistant: {&quot;name&quot;:&quot;gitmcp.fetch_website_documentation&quot;,&quot;arguments&quot;:{&quot;document_id&quot;:&quot;docs/ENCODING.md&quot;}}&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The hosted MCP tool in the Responses API turns external-service access from a bespoke plumbing task into a first-class capability of the API. By connecting to a remote server, letting the runtime cache its tool list, and trimming that list with allowed_tools, you eliminate the extra network hop, cut token overhead, and give the model a concise, discoverable action set.</p>
+<p>When combined with built-in tools such as code_interpreter, web_search_preview, or image_gen, MCP unlocks rich, multi-service workflows whether you’re analyzing sales data, triaging production errors, or automating checkout flows.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/tom-mcmillan/nwsl_data" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
