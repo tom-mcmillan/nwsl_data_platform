@@ -2,14 +2,6 @@ import { defaultVectorStore } from "@/config/constants";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
-// Cache for storing headlines
-interface CachedHeadline {
-  headline: string;
-  generated_at: string;
-  expires_at: number;
-}
-
-let headlineCache: CachedHeadline | null = null;
 
 // Fallback headlines for when API is unavailable (following "How" format)
 const FALLBACK_HEADLINES = [
@@ -142,42 +134,15 @@ function getTemplateHeadline(): string {
   return FALLBACK_HEADLINES[randomIndex];
 }
 
-function isHeadlineCacheValid(): boolean {
-  if (!headlineCache) return false;
-  return Date.now() < headlineCache.expires_at;
-}
 
 export async function GET() {
   try {
-    // Check cache first (4 hour cache)
-    if (isHeadlineCacheValid() && headlineCache) {
-      console.log("Returning cached headline");
-      return NextResponse.json({
-        headline: headlineCache.headline,
-        generated_at: headlineCache.generated_at,
-        cached: true
-      }, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        },
-      });
-    }
-
     console.log("Generating new headline with NWSL data");
     
-    // Generate new headline using MCP and NWSL database
+    // Generate new headline using MCP and NWSL database (no caching)
     const headline = await generateHeadlineWithMCP();
     const now = new Date();
     const generated_at = now.toISOString();
-    
-    // Cache for 4 hours
-    headlineCache = {
-      headline,
-      generated_at,
-      expires_at: Date.now() + (4 * 60 * 60 * 1000) // 4 hours in milliseconds
-    };
 
     return NextResponse.json({
       headline,
