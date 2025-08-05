@@ -72,9 +72,7 @@ Emotional Connection
 // ${context}
 
 // Initial message that will be displayed in the chat
-export const INITIAL_MESSAGE = `
-Let chat NWSL... what's on your mind?
-`;
+export const INITIAL_MESSAGE = ``;
 
 export const defaultVectorStore = {
   id: "vs_6891378219708191aa929bf96a6f1880",
