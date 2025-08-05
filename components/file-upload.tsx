@@ -174,9 +174,8 @@ export default function FileUpload({
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
-        <div className="bg-white rounded-full flex items-center justify-center py-1 px-3 border border-zinc-200 gap-1 font-medium text-sm cursor-pointer hover:bg-zinc-50 transition-all">
-          <Plus size={16} />
-          Upload
+        <div className="rounded-full flex items-center justify-center p-2 cursor-pointer hover:bg-gray-100 transition-all">
+          <Plus size={18} className="text-gray-600" />
         </div>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] md:max-w-[600px] max-h-[80vh] overflow-y-scrollfrtdtd">

@@ -16,6 +16,8 @@ export default function ContextPanel() {
     setMcpEnabled,
     codeInterpreterEnabled,
     setCodeInterpreterEnabled,
+    showToolDetails,
+    setShowToolDetails,
   } = useToolsStore();
   return (
     <div className="h-full p-8 w-full bg-[#f9f9f9] rounded-t-xl md:rounded-none border-l-1 border-stone-100">
@@ -65,6 +67,12 @@ export default function ContextPanel() {
         >
           <McpConfig />
         </PanelConfig>
+        <PanelConfig
+          title="Show Tool Details"
+          tooltip="Always show tool arguments and outputs (when off, click to expand)"
+          enabled={showToolDetails}
+          setEnabled={setShowToolDetails}
+        />
       </div>
     </div>
   );

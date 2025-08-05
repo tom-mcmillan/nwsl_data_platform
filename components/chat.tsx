@@ -6,6 +6,8 @@ import Message from "./message";
 import Annotations from "./annotations";
 import McpToolsList from "./mcp-tools-list";
 import McpApproval from "./mcp-approval";
+import FileUpload from "./file-upload";
+import useToolsStore from "@/stores/useToolsStore";
 import { Item, McpApprovalRequestItem } from "@/lib/assistant";
 import LoadingMessage from "./loading-message";
 import useConversationStore from "@/stores/useConversationStore";
@@ -26,6 +28,28 @@ const Chat: React.FC<ChatProps> = ({
   // This state is used to provide better user experience for non-English IMEs such as Japanese
   const [isComposing, setIsComposing] = useState(false);
   const { isAssistantLoading } = useConversationStore();
+  const { vectorStore, setVectorStore } = useToolsStore();
+
+  const handleAddStore = async (storeId: string) => {
+    if (storeId.trim()) {
+      const newStore = await fetch(
+        `/api/vector_stores/retrieve_store?vector_store_id=${storeId}`
+      ).then((res) => res.json());
+      if (newStore.id) {
+        console.log("Retrieved store:", newStore);
+        setVectorStore(newStore);
+      } else {
+        alert("Vector store not found");
+      }
+    }
+  };
+
+  const unlinkStore = async () => {
+    setVectorStore({
+      id: "",
+      name: "",
+    });
+  };
 
   const scrollToBottom = () => {
     itemsEndRef.current?.scrollIntoView({ behavior: "instant" });
@@ -85,6 +109,12 @@ const Chat: React.FC<ChatProps> = ({
             <div className="flex w-full items-center pb-4 md:pb-1">
               <div className="flex w-full flex-col gap-1.5 rounded-[20px] p-2.5 pl-1.5 transition-colors bg-white border border-stone-200 shadow-sm">
                 <div className="flex items-end gap-1.5 md:gap-2 pl-4">
+                  <FileUpload
+                    vectorStoreId={vectorStore?.id ?? ""}
+                    vectorStoreName={vectorStore?.name ?? ""}
+                    onAddStore={(id) => handleAddStore(id)}
+                    onUnlinkStore={() => unlinkStore()}
+                  />
                   <div className="flex min-w-0 flex-1 flex-col">
                     <textarea
                       id="prompt-textarea"

@@ -49,6 +49,8 @@ interface StoreState {
   setMcpEnabled: (enabled: boolean) => void;
   mcpConfig: McpConfig;
   setMcpConfig: (config: McpConfig) => void;
+  showToolDetails: boolean;
+  setShowToolDetails: (show: boolean) => void;
 }
 
 const useToolsStore = create<StoreState>()(
@@ -90,6 +92,10 @@ const useToolsStore = create<StoreState>()(
       codeInterpreterEnabled: false,
       setCodeInterpreterEnabled: (enabled) => {
         set({ codeInterpreterEnabled: enabled });
+      },
+      showToolDetails: false,
+      setShowToolDetails: (show) => {
+        set({ showToolDetails: show });
       },
       setVectorStore: (store) => set({ vectorStore: store }),
       setWebSearchConfig: (config) => set({ webSearchConfig: config }),
