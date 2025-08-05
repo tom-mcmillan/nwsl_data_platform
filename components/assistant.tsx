@@ -1,14 +1,18 @@
 "use client";
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import Chat from "./chat";
 import useConversationStore from "@/stores/useConversationStore";
 import { Item, processMessages } from "@/lib/assistant";
 
-export default function Assistant() {
+interface AssistantProps {
+  initialQuery?: string | null;
+}
+
+export default function Assistant({ initialQuery }: AssistantProps) {
   const { chatMessages, addConversationItem, addChatMessage, setAssistantLoading } =
     useConversationStore();
 
-  const handleSendMessage = async (message: string) => {
+  const handleSendMessage = useCallback(async (message: string) => {
     if (!message.trim()) return;
 
     const userItem: Item = {
@@ -29,7 +33,14 @@ export default function Assistant() {
     } catch (error) {
       console.error("Error processing message:", error);
     }
-  };
+  }, [addConversationItem, addChatMessage, setAssistantLoading]);
+
+  // Handle initial query from homepage
+  useEffect(() => {
+    if (initialQuery && initialQuery.trim()) {
+      handleSendMessage(initialQuery.trim());
+    }
+  }, [initialQuery, handleSendMessage]);
 
   const handleApprovalResponse = async (
     approve: boolean,
