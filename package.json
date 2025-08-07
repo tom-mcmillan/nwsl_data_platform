@@ -10,8 +10,9 @@
     "docs:install": "pip install -r requirements.txt",
     "docs:dev": "mkdocs serve",
     "docs:build": "mkdocs build",
-    "docs:deploy": "mkdocs build && echo 'Documentation built to public/docs/'",
-    "build:all": "npm run docs:build && npm run build"
+    "docs:deploy": "mkdocs build --clean && echo 'Documentation built to public/docs/ for Next.js serving'",
+    "build:all": "npm run docs:build && npm run build",
+    "deploy": "npm run build:all && echo 'Ready for deployment: Platform + Documentation unified'"
   },
   "dependencies": {
     "@npmcli/fs": "^4.0.0",
