@@ -20,6 +20,9 @@
 # production
 /build
 
+# MkDocs build output
+/site
+
 # misc
 .DS_Store
 *.pem

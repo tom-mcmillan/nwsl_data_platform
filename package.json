@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "docs:install": "pip install -r requirements.txt",
-    "docs:sync": "./sync-docs.sh",
     "docs:dev": "mkdocs serve",
     "docs:build": "mkdocs build",
     "docs:deploy": "mkdocs build && echo 'Documentation built to public/docs/'",

@@ -14,8 +14,8 @@ repo_name: tom-mcmillan/nwsl_data_platform
 repo_url: https://github.com/tom-mcmillan/nwsl_data_platform
 edit_uri: edit/main/docs/
 
-# Build Directory Configuration
-site_dir: public/docs
+# Build Directory Configuration - GitHub Pages
+site_dir: site
 docs_dir: docs
 
 # Theme Configuration - OpenAI Inspired Professional Design
@@ -164,7 +164,7 @@ extra:
       link: https://github.com/tom-mcmillan/nwsl_data_platform
       name: NWSL Analytics on GitHub
 
-# Navigation Structure - Comprehensive Platform Documentation
+# Navigation Structure - Available Documentation
 nav:
   - Home: index.md
   
@@ -179,52 +179,15 @@ nav:
     - Coverage & Quality: data/coverage.md
     - Data Sources: data/sources.md
     - Database Overview: data/database-overview.md
-    - Schema Documentation: schema.md
   
   - Analytics Platform:
     - platform/index.md
     - NIR Composite Metrics: platform/nir-metrics.md
-    - Player Analysis: platform/player-analysis.md
-    - Team Intelligence: platform/team-intelligence.md
-    - Tactical Profiling: platform/tactical-profiling.md
-    - Predictive Models: platform/predictive-models.md
   
   - MCP Server:
     - mcp/index.md
     - Architecture: mcp/architecture.md
-    - Tools & Capabilities: mcp/tools.md  
-    - Usage Guide: mcp_server_usage.md
-    - Building MCP Servers: "mcp docs/building_an_mpc_server.md"
-    - Responses API Guide: "mcp docs/guide_to_using_the_responses_apis_mcp_tool.md"
-    - Remote MCP: "mcp docs/remote_mcp.md"
-  
-  - AI Visualization Agents:
-    - visualization/index.md
-    - Chart Generation: visualization/chart-generation.md
-    - Context-Aware Plotting: visualization/context-aware.md
-    - Interactive Dashboards: visualization/dashboards.md
-  
-  - API Reference:
-    - api/index.md
-    - Authentication: api/authentication.md
-    - Endpoints: api/endpoints.md
-    - Rate Limiting: api/rate-limiting.md
-    - Error Handling: api/error-handling.md
-  
-  - Technical Implementation:
-    - System Design: system_design.md
-    - System Prompt: system_prompt.md
-    - Database Changes: database_changes.md
-    - Team Seasons: teams_seasons.md
-    - Data Scraping: scraping.md
-    - Test Queries: test_queries.md
-  
-  - Deployment & Operations:
-    - deployment/index.md
-    - Cloud Infrastructure: deployment/cloud.md
-    - Monitoring: deployment/monitoring.md
-    - Performance: deployment/performance.md
-    - Scaling: deployment/scaling.md
+    - Tools & Capabilities: mcp/tools.md
 
 # Copyright
 copyright: >

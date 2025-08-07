@@ -10,9 +10,9 @@ Professional documentation and web platform for the NWSL Advanced Analytics Inte
 ## Architecture
 
 - **Documentation**: Professional MkDocs Material rendering with OpenAI-inspired theme
-- **Web Interface**: NextJS chat interface connected to NWSL MCP server
+- **Web Interface**: NextJS chat interface connected to NWSL MCP server  
 - **Analytics Integration**: Model Context Protocol (MCP) integration for advanced analytics
-- **Single Source of Truth**: Documentation synced from `nwsl_data` project
+- **Consolidated Workflow**: All documentation authored and published from this project
 
 ## Features
 
@@ -24,27 +24,33 @@ Professional documentation and web platform for the NWSL Advanced Analytics Inte
 
 ## Documentation System
 
-### Development Workflow
+### GitHub Pages Deployment
 
-1. **Documentation Source**: All content authored in `../nwsl_data/docs/` (single source of truth)
-2. **Professional Rendering**: Enhanced MkDocs Material with OpenAI-inspired theme
-3. **Sync Process**: `npm run docs:sync` copies content and builds documentation
+Documentation is automatically deployed to `platform.nwsldata.com/docs/` via GitHub Pages.
+
+**Simple Workflow:**
+1. **Edit documentation** in `docs/` directory
+2. **Commit and push** to main branch
+3. **GitHub Actions automatically builds and deploys** the documentation
 
 ### Documentation Commands
 
 ```bash
-# Install documentation dependencies
+# Install documentation dependencies (for local development)
 npm run docs:install
 
-# Sync documentation from nwsl_data and build
-npm run docs:sync
-
-# Development server (after sync)
+# Local development server
 npm run docs:dev
 
-# Build documentation only
+# Local build (for testing)
 npm run docs:build
 ```
+
+### Deployment
+
+- **Automatic**: Push to main branch triggers deployment
+- **Manual**: Use GitHub Actions "Deploy Documentation" workflow
+- **Live Site**: https://platform.nwsldata.com/docs/
 
 ### Web Interface Setup
 
