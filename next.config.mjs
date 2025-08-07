@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   devIndicators: false,
-  // Proxy documentation requests to MCP server
+  // Proxy documentation requests to GitHub Pages
   async rewrites() {
-    const MCP_SERVER_URL = process.env.MCP_SERVER_URL || 'http://localhost:8000';
-    
     return [
-      // Proxy all /docs/ requests to MCP server
+      // Proxy all /docs/ requests to GitHub Pages
+      {
+        source: '/docs',
+        destination: 'https://tom-mcmillan.github.io/nwsl_data/',
+      },
       {
         source: '/docs/:path*',
-        destination: `${MCP_SERVER_URL}/docs/:path*`,
+        destination: 'https://tom-mcmillan.github.io/nwsl_data/:path*',
       },
     ];
   },
