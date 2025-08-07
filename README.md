@@ -7,7 +7,7 @@
 
 Professional documentation and web platform for the NWSL Advanced Analytics Intelligence system. This repository handles documentation rendering and web interface for sophisticated soccer analytics powered by sabermetrics-inspired composite metrics.
 
-*Last updated: August 7, 2025*
+*Last updated: August 7, 2025 - Build trigger*
 
 ## Architecture
 
