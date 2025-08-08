@@ -9,10 +9,10 @@ site_description: >
   Comprehensive documentation for the NWSL Advanced Analytics Intelligence 
   platform - sophisticated sabermetrics-inspired analysis for women's professional soccer.
 
-# Repository
-repo_name: tom-mcmillan/nwsl_data_platform
-repo_url: https://github.com/tom-mcmillan/nwsl_data_platform
-edit_uri: edit/main/docs/
+# Repository - Disabled for cleaner header
+# repo_name: tom-mcmillan/nwsl_data_platform  
+# repo_url: https://github.com/tom-mcmillan/nwsl_data_platform
+# edit_uri: edit/main/docs/
 
 # Build Directory Configuration - Next.js Static Files
 site_dir: public/docs
@@ -23,6 +23,7 @@ use_directory_urls: false
 theme:
   name: material
   language: en
+  custom_dir: overrides
   
   # Color Palette - Clean professional theme
   palette:
@@ -55,8 +56,8 @@ theme:
     - navigation.instant.prefetch  # Prefetch on hover
     - navigation.instant.progress  # Progress indicator
     - navigation.tracking       # Update URL with anchor
-    - navigation.tabs           # Top-level tabs
-    - navigation.tabs.sticky    # Sticky tabs
+    # - navigation.tabs           # Top-level tabs - Disabled for single page
+    # - navigation.tabs.sticky    # Sticky tabs - Disabled for single page
     - navigation.indexes        # Section index pages
     - navigation.top            # Back to top button
     - navigation.footer         # Prev/next navigation
@@ -151,35 +152,14 @@ extra:
             Thanks for your feedback! Help us improve this page by
             <a href="..." target="_blank" rel="noopener">telling us what you found confusing</a>.
   
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/tom-mcmillan/nwsl_data_platform
-      name: NWSL Analytics on GitHub
+  # social:
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/tom-mcmillan/nwsl_data_platform
+  #     name: NWSL Analytics on GitHub
 
-# Navigation Structure - Available Documentation
+# Navigation Structure - Single Page with Sidebar Navigation
 nav:
   - Home: index.md
-  
-  - About:
-    - about/index.md
-    - Mission & Vision: about/mission.md
-    - Methodology: about/methodology.md
-    - Why Advanced Analytics: about/why-advanced-analytics.md
-  
-  - Data Foundation:
-    - data/index.md
-    - Coverage & Quality: data/coverage.md
-    - Data Sources: data/sources.md
-    - Database Overview: data/database-overview.md
-  
-  - Analytics Platform:
-    - platform/index.md
-    - NIR Composite Metrics: platform/nir-metrics.md
-  
-  - MCP Server:
-    - mcp/index.md
-    - Architecture: mcp/architecture.md
-    - Tools & Capabilities: mcp/tools.md
 
 # Copyright
 copyright: >

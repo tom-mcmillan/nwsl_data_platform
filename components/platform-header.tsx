@@ -31,7 +31,8 @@ export default function PlatformHeader({
   };
 
   const handleDocsClick = () => {
-    window.open("https://platform.nwsldata.com/docs/", "_blank");
+    // Seamless navigation - same tab for natural flow
+    window.location.href = "https://platform.nwsldata.com/docs/";
   };
 
   const handleLogoClick = () => {
