@@ -1,0 +1,3 @@
+origin	https://github.com/tom-mcmillan/nwsl_data_platform.git (fetch)
+origin	https://github.com/tom-mcmillan/nwsl_data_platform.git (push)
+* main 424fc7e [origin/main] Create unified single-page documentation with seamless navigation
